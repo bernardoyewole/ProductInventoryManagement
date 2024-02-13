@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ProductInventoryManagement.Models.ProductInventory>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inventory Management</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            margin-inline: auto;
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 40px;
+            font-weight: 500;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #0085e6;
+            color: #fff;
+        }
+
+        div {
+            text-align: center;
+            margin-top: 20px;
+            color: #0085e6;
+        }
+
+        li + li {
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PRODUCTS INVENTORY</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>$@product.Price</td>
+                    <td>@product.StockQuantity</td>
+                </tr>
+            }
+    </table>
+    <div>
+        <li>
+            @Html.ActionLink("Click here to add a product", "AddProduct");
+        </li>
+        <li>
+            @Html.ActionLink("Click here to delete a product", "DeleteProduct");
+        </li>
+    </div>
+</body>
+</html>

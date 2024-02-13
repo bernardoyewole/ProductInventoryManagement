@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inventory Management</title>
+    <style>
+        form {
+            display: grid;
+            place-items: center;
+        }
+
+        #productName {
+            margin-left: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #0085e6;
+            padding: 10px 24px;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 6px;
+            border-style: none;
+            box-sizing: border-box;
+            margin-top: 14px;
+            margin-left: 30px;
+        }
+
+        td {
+            font-size: 18px;
+        }
+
+        center {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete Product</h1>
+    <hr />
+    <p>Enter product name to delete</p>
+    @using (Html.BeginForm("DeleteProductAction", "Product"))
+            {
+                <form method="post">
+                    <table>
+                        <tr>
+                            <td>Product</td>
+                            <td><input type="text" id="productName" name="productName" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Delete"/></td>
+                        </tr>
+                    </table>
+                </form>
+            }
+    <center>
+        @Html.ActionLink("Back to products", "Index")
+    </center>
+</body>
+</html>

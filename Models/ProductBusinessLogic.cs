@@ -42,6 +42,22 @@ namespace ProductInventoryManagement.Models
             return productInventory;
         }
 
+        //public List<ProductInventory> GetProductsInfo()
+        //{
+        //    List<ProductInventory> productInventory = Products.GroupJoin(Inventory,
+        //                                        Products => Products.ProductID,
+        //                                        Inventory => Inventory.ProductID,
+        //                                        (Products, Inventory) => new ProductInventory
+        //                                        {
+        //                                            Name = Products.Name,
+        //                                            Description = Products.Description,
+        //                                            Price = Products.Price,
+        //                                            StockQuantity = Inventory.Select(inv => inv.StockQuantity).Sum()
+        //                                        }).ToList();
+
+        //    return productInventory;
+        //}
+
         // Add Inventory and corresponding Product data to database collections
         public bool AddProductInventory(ProductInventory productInventory)
         {
